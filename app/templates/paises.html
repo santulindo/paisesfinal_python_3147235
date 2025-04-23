@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 div class="p-3 mb-2 bg-primary text-white">Listado de Paises </div></h1>
+    <h3>hola, {{ usuario }}</h3>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="text-danger">nombre</th>
+                <th class="text-danger">capital</th>
+                <th class="text-danger">moneda</th>
+                <th class="text-danger">poblacion</th>
+                <th div class="p-3 mb-2 bg-success text-white">superficie</th>
+                <th class="text-danger">ciudades principales</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pais  in paises %}
+            <tr> 
+                <td class="text-danger">{{pais.nombre}}</td>
+                <td>{{pais.capital}}</td>
+                <td>{{pais.moneda}}</td>
+                <td>{{pais.poblacion}}</td>
+                <td div class="p-3 mb-2 bg-success text-white">{{pais.superficie}}</td>
+                <td>
+                    {% for ciudad in pais.ciudadesprincipales %}
+                       {{ciudad}}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+       
+    </ul>
+</body>
+</html>
